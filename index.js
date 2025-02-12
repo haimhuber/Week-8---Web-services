@@ -50,7 +50,6 @@ function getDataFromWebAPI2() {
                 currentLocation.appendChild(regionName).nextElementSibling;
                 currentLocation.appendChild(lot_lan).nextElementSibling;
                 currentLocation.appendChild(goToLocationButton).nextElementSibling;
-                currentLocation.appendChild(document.createElement('br')).nextElementSibling;
                 currentLocation.appendChild(locationWebsite).nextElementSibling;
                 document.querySelector("#myDiv").appendChild(currentLocation);
 
