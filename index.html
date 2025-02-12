@@ -9,7 +9,14 @@
 </head>
 
 <body>
-    <input class="apiButton" type="button" value="Click to get data" onclick="getDataFromWebAPI()">
+    <input style="margin: 30px;" class="apiButton" type="button" value="Click to get data"
+        onclick="getDataFromWebAPI2()">
+    <div id="mapDiv" style="margin-bottom: 20px;">
+        <iframe id="myiFrameMap" width="500" height="500" style="border:0" loading="lazy" allowfullscreen
+            src="https://www.openstreetmap.org/export/embed.html?bbox=35.425%2C32.684%2C35.432%2C32.689&layer=mapnik">
+        </iframe>
+    </div>
+
     <div id="myDiv">
 
     </div>

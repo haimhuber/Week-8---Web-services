@@ -26,16 +26,28 @@
     width: 250px;
     text-align: center;
     padding: 5px;
+    box-shadow: 3px 3px 3px 3px rgb(195, 199, 197);
 
 }
 
 /* Reffered to div only profileCard:hover */
 /* Reffered to inside div elements  profileCard :hover */
 .profileCard:hover {
-    background-color: rgb(7, 68, 97);
+    background-color: rgb(27, 104, 139);
     box-shadow: 5px 5px;
 }
 
 .profileCard img {
     border-radius: 70px;
+}
+
+.profileCard p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+}
+
+.mapButton {
+    font-weight: 600;
+    font-size: small;
+    margin-bottom: 10px;
 }
