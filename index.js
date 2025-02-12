@@ -23,12 +23,12 @@ function getDataFromWebAPI() {
 }
 
 function getDataFromWebAPI2() {
+
     fetch("https://class-examples.onrender.com/exam/locations")
         .then((dataFromApi2) => {
             return dataFromApi2.json();
         })
         .then((dataAsObj2) => {
-
             for (const curr of dataAsObj2.locations.slice(1)) {
                 const currentLocation = document.createElement('div');
                 currentLocation.classList.add('profileCard');
@@ -46,23 +46,35 @@ function getDataFromWebAPI2() {
                 locationWebsite.setAttribute('href', curr.URL);
                 locationWebsite.setAttribute('target', "_blank");
                 locationWebsite.textContent = "Go to Website";
+                const showTemp = document.createElement('input');
+                showTemp.setAttribute("type", "button");
+                showTemp.setAttribute('value', "Click to show weather");
+                showTemp.classList.add('mapButton');
                 currentLocation.appendChild(locationName);
                 currentLocation.appendChild(regionName).nextElementSibling;
                 currentLocation.appendChild(lot_lan).nextElementSibling;
                 currentLocation.appendChild(goToLocationButton).nextElementSibling;
                 currentLocation.appendChild(locationWebsite).nextElementSibling;
+                currentLocation.appendChild(showTemp).nextElementSibling;
                 document.querySelector("#myDiv").appendChild(currentLocation);
-
                 // Wait for event listner
                 goToLocationButton.addEventListener('click', () => {
-                    document.querySelector("#myiFrameMap").setAttribute('src', `https://www.openstreetmap.org/export/embed.html?bbox=${curr.LAT}%2C${curr.LON}%2C${curr.LAT}%2C${curr.LON}&layer=mapnik`)
+                    document.querySelector("#mapDiv iframe").setAttribute('src', `https://www.openstreetmap.org/export/embed.html?bbox=${curr.LAT}%2C${curr.LON}%2C${curr.LAT}%2C${curr.LON}&layer=mapnik&marker=${curr.LON},${curr.LAT}`)
                 });
 
+                showTemp.addEventListener('click', () => {
+                    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${curr.LAT}&lon=${curr.LON}&appid=22026426432bae35bfa81d06c43bbdd6`)
+                        .then((getWeatherData) => { return getWeatherData.json(); })
+                        .then((fetchWeatherData) => {
+                            const weatherData = document.createElement('h4');
+                            weatherData.textContent = `Current Temp: ${Number(((fetchWeatherData.main.temp) / 10).toFixed(1)) - 5} °C`;
+                            showTemp.classList.add('hdn');
+                            currentLocation.appendChild(weatherData).nextElementSibling;
+                        })
+                })
 
             }
-
-
-
         });
 }
+
 
