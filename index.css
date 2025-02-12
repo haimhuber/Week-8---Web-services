@@ -1,0 +1,41 @@
+.apiButton {
+    color: brown;
+    background-color: aquamarine;
+    font-size: larger;
+    font-weight: 700;
+}
+
+.apiButton:hover {
+    color: yellowgreen;
+    background-color: rgb(10, 10, 10);
+    font-size: larger;
+    font-weight: 700;
+}
+
+
+#myDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.profileCard {
+    margin: 10px;
+    border: 3px rgb(28, 32, 31) solid;
+    border-radius: 50px;
+    width: 250px;
+    text-align: center;
+    padding: 5px;
+
+}
+
+/* Reffered to div only profileCard:hover */
+/* Reffered to inside div elements  profileCard :hover */
+.profileCard:hover {
+    background-color: rgb(7, 68, 97);
+    box-shadow: 5px 5px;
+}
+
+.profileCard img {
+    border-radius: 70px;
+}
