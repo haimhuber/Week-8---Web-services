@@ -37,7 +37,7 @@ function getDataFromWebAPI2() {
                 const regionName = document.createElement('h4');
                 regionName.textContent = curr.Region;
                 const lot_lan = document.createElement('p');
-                lot_lan.textContent = `lat: ${Number(curr.LAT).toFixed(2)} lon: ${Number(curr.LON).toFixed(2)}`;
+                lot_lan.textContent = `lat: ${Number(curr.LON).toFixed(2)} lon: ${Number(curr.LAT).toFixed(2)}`;
                 const goToLocationButton = document.createElement('input');
                 goToLocationButton.setAttribute('type', "button");
                 goToLocationButton.setAttribute('value', "Show on map");
@@ -63,11 +63,11 @@ function getDataFromWebAPI2() {
                 });
 
                 showTemp.addEventListener('click', () => {
-                    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${curr.LAT}&lon=${curr.LON}&appid=22026426432bae35bfa81d06c43bbdd6`)
+                    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${curr.LON}&lon=${curr.LAT}&appid=22026426432bae35bfa81d06c43bbdd6`)
                         .then((getWeatherData) => { return getWeatherData.json(); })
                         .then((fetchWeatherData) => {
                             const weatherData = document.createElement('h4');
-                            weatherData.textContent = `Current Temp: ${Number(((fetchWeatherData.main.temp) / 10).toFixed(1)) - 5} °C`;
+                            weatherData.textContent = `Current Temp: ${Number(((fetchWeatherData.main.temp) / 10).toFixed(1))} °C`;
                             showTemp.classList.add('hdn');
                             currentLocation.appendChild(weatherData).nextElementSibling;
                         })
