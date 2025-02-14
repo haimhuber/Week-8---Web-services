@@ -1,0 +1,10 @@
+.weatherBtn:hover {
+    background-color: blue;
+    box-shadow: 5px 5px 5px 5px;
+    color: aliceblue;
+}
+
+.cityName {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: brown;
+}
