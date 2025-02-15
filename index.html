@@ -10,11 +10,14 @@
 
 <body>
     <header>
-        <h1>Task information</h1>
+        <h1>Weather information</h1>
     </header>
-    <input id="city" type="text" placeholder="Type city name">
-    <input class="weatherBtn" type="button" value="Send" onclick="weatherInfo()">
-    <div class="mainDiv"></div>
+    <div class="mainDiv">
+        <input id="city" list="cities" type="text" placeholder="Type city name">
+        <input class="weatherBtn" type="button" value="Send" onclick="weatherInfo()">
+        <div id="cityDataList"></div>
+    </div>
+    <div id="buildDivInDOM"></div>
 
 
     <script src="index.js"></script>
